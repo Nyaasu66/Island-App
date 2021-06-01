@@ -1,6 +1,6 @@
-# my_app
+# I岛
 
-A new Flutter project.
+为 mc服务器：IslandMC 做的一个小app 
 
 ## Getting Started
 
