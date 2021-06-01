@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+## Credits
+
+- [@Mfweb](https://github.com/Mfweb) 感谢运营mc服务器/提供api/~~在群里撒狗粮~~
+- 虚位以待..
