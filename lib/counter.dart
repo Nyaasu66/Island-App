@@ -7,7 +7,7 @@ class Counter = _Counter with _$Counter;
 
 abstract class _Counter with Store {
   @observable
-  int value = 194;
+  int value = 196;
 
   @observable
   bool btnStatus = false;
@@ -22,7 +22,7 @@ abstract class _Counter with Store {
   void fastIncrement(bool status) {
     if (status) {
       btnStatus = true;
-      const oneSec = const Duration(milliseconds: 50);
+      const oneSec = const Duration(milliseconds: 40);
       new Timer.periodic(oneSec, (Timer t) {
         increment();
         if (btnStatus == false) {
