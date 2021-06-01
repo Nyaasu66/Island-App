@@ -48,44 +48,66 @@ class MyHomePage extends StatelessWidget {
   // @override
   // _MyHomePageState createState() => _MyHomePageState();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Island岛 · i2s.io"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Island二周目岛民数量',
-            ),
-            Observer(
-              builder: (_) => Text(
-                '${counter.value}',
-                style: Theme.of(context).textTheme.headline4,
+        appBar: AppBar(
+          title: Text("Island岛 · mc.i2s.io"),
+        ),
+        body: Center(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+              Text(
+                'Island二周目岛民数量',
+              ),
+              Observer(
+                  builder: (_) => Text(
+                        '${counter.value}',
+                        style: Theme.of(context).textTheme.headline4,
+                      )),
+              FlatButton(
+                child: Text("详情 ->"),
+                textColor: Colors.blue,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return NewRoute();
+                  }));
+                },
               )
-            ),
-            FlatButton(
-              child: Text("详情 ->"),
-              textColor: Colors.blue,
+            ])),
+        floatingActionButton: GestureDetector(
+          onLongPressStart: (d) {
+            counter.fastIncrement(true);
+            // print('Long pressed');
+          },
+          onLongPressEnd: (d) {
+            counter.fastIncrement(false);
+            // print('Press cancled');
+          },
+          child: FloatingActionButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return NewRoute();
-                }));
+                counter.increment();
               },
-            )
-          ]
-        )
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: counter.increment,
-        tooltip: '岛民+1',
-        child: Icon(Icons.add)
-      )
-    );
+              // tooltip: '岛民+1',
+              child: Icon(Icons.add)),
+          // Row(
+          //   children: <Widget>[
+          //     FloatingActionButton(
+          //         onPressed: () {
+          //           counter.fastIncrement(false);
+          //         },
+          //         tooltip: '岛民+1',
+          //         child: Icon(Icons.add)),
+          //     FloatingActionButton(
+          //         onPressed: () {
+          //           counter.fastIncrement(true);
+          //         },
+          //         tooltip: '岛民stop+1',
+          //         child: Icon(Icons.add))
+          //   ],
+          // )
+        ));
   }
 }
 
