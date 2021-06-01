@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'counter.dart';
+import 'myWebView.dart';
 
 final counter = Counter();
 
@@ -192,12 +193,7 @@ class NewRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("二周目岛民列表"),
-      ),
-      body: Center(
-        child: Text("嗯？你觉得我真的有这个能力做出来吗？"),
-      ),
+      body: MyWebView(title: '二周目玩家列表', selectedUrl: 'https://mc.i2s.io'),
     );
   }
 }
