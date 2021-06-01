@@ -29,7 +29,8 @@ class MyWebView extends StatelessWidget {
             controll = webViewController;
           },
           onPageFinished: (url) {
-            controll.evaluateJavascript('document.querySelector(".ant-btn-primary").click()');
+            controll.evaluateJavascript(
+                'document.querySelector(".ant-btn-primary").click()');
           },
         ));
   }
